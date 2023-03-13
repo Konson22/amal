@@ -2,24 +2,20 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom'
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import ChildrenContextProvider from './contexts/ChildrenContextProvider';
 import App from './App';
 import './app.css'
-
-const queryClient = new QueryClient()
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
+      <ChildrenContextProvider>
         <Routes>
           <Route path='/*' element={<App tab="home" />} />
         </Routes>
-        <ReactQueryDevtools />
-      </QueryClientProvider>
+      </ChildrenContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
