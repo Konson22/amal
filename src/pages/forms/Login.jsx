@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { FaGoogle, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FiMail, FiUser } from "react-icons/fi";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../config";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../config";
 
 
 
@@ -13,9 +13,9 @@ export default function Login({ setOpenModal }) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value).then(user => {
-            console.log(user)
-        })
+        // signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value).then(user => {
+        //     console.log(user)
+        // })
     }
   return (
     <div className='flex bg-white p-2'>
