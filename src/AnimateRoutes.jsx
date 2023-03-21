@@ -8,7 +8,6 @@ import RefugeeCamps from './pages/RefugeeCamps'
 export default function AnimateRoutes() {
 
   return (
-    <AnimatePresence>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/causes' element={<Cause />} />
@@ -16,6 +15,5 @@ export default function AnimateRoutes() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/refugee-camps' element={<RefugeeCamps />} />
       </Routes>
-    </AnimatePresence>
   )
 }
