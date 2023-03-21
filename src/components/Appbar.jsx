@@ -25,9 +25,9 @@ export default function Appbar() {
     
     const authButtons = (
         <div className="flex items-center ml-6">
-            <button className="px-6 lg:py-2 py-1 bg-sky-600 text-white rounded" onClick={() => setOpenModal('login')}>
+            {/* <button className="px-6 lg:py-2 py-1 bg-sky-600 text-white rounded" onClick={() => setOpenModal('login')}>
                 Donate
-            </button>
+            </button> */}
             <span className="text-2xl lg:ml-8 ml-4">
                 <FiBell className="" />
             </span>
@@ -126,16 +126,21 @@ export default function Appbar() {
 
 
 
+const howtohelpSublink = [
+    {text:'Help with donation', path:'/help'},
+    {text:'Volunteer', path:'/volunteer'},
+]
 const links = [
     {text:'Home', path:'/'},
     {text:'Causes', path:'/causes'},
-    {text:'Our Work', path:'/our-work'},
+    {text:'How to help', subLinks:howtohelpSublink, path:'/our-work'},
     {text:'Refugee camps', path:'/refugee-camps'},
     {text:'About us', path:'/about'},
     {text:'Blog', path:'/blog'},
-    {text:'Others', subLinks:[
-        { text:'Services', path:'/services' },
-        { text:'Services', path:'/services' },
-        { text:'Services', path:'/services' },
-    ], path:'/other'},
+    {text:'donate', path:'/Donate'},
+    // {text:'Others', subLinks:[
+    //     { text:'Services', path:'/services' },
+    //     { text:'Services', path:'/services' },
+    //     { text:'Services', path:'/services' },
+    // ], path:'/other'},
 ]

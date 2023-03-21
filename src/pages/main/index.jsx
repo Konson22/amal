@@ -19,7 +19,11 @@ export default function Main() {
         <div className="flex-1 lg:ml-24 pr-20">
           <h2 className="lg:text-5xl text-3xl font-bold mb-4">Helping is an act of Soft Heart</h2>
           <p>
-            When you sponsor a child you create a powerfull effect, multiplier effect. you help them see beyond the daily strugles of life in poverty. your support release them from a cycle of a short-tem descission and help them gain the ability to being contributing to thier families and communities.
+            Regular donations are essential to our work, allowing us to plan ahead and operate efficiently.
+            Sign up to become a regular donor today, and to say thank you we’ll send you a free copy of Tastes & Tales From A Distant Homeland.
+            It’s a wonderful collection of authentic recipes, inspiring thoughts and heartfelt stories from refugees from the Middle East and Africa—featuring the dishes that they miss from home. 
+            An inspiring addition to any kitchen.
+            {/* When you sponsor a child you create a powerfull effect, multiplier effect. you help them see beyond the daily strugles of life in poverty. your support release them from a cycle of a short-tem descission and help them gain the ability to being contributing to thier families and communities. */}
           </p>
           <button className="px-6 py-3 rounded text-yellow-700 bg-white mt-6">Donate</button>
         </div>
