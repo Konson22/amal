@@ -7,7 +7,7 @@ export default function Header() {
         <h1 className="lg:text-7xl text-4xl font-bold text-white">Building a better world for and with children</h1>
         {/* <h1 className="lg:text-7xl text-4xl font-bold text-white">Helping is an act of Soft Heart</h1> */}
         <div className="mt-8">
-          <button className="lg:text-xl px-5 py-3 bg-orange rounded text-white mr-2">Donate</button>
+          <button className="blcok lg:text-xl px-5 py-3 bg-orange rounded text-white mr-2">Donate</button>
           <Link className="blcok lg:text-xl px-5 py-3 bg-orange rounded text-white" to='/blog'>Hear from refugee</Link>
         </div>
       </div>

@@ -55,7 +55,7 @@ export default function Appbar() {
         }>
             <ul className="lg:flex h-full lg:bg-transparent bg-white lg:text-white text-gray-600">
                 <div className="lg:hidden bg-orange flex items-center justify-between mb-2">
-                    <div className=" bg-black rounded-r-full border-r-2 shadow-lg border-white overflow-hidden lg:pr-12 pr-4 py-2 lg:pl-[4%] pl-2">
+                    <div className=" bg-black rounded-r-full border-r-2 shadow-lg border-white overflow-hidden lg:pr-12 pr-4 py-3 lg:pl-[4%] pl-2">
                         <img className="h-[2.2rem]" src={process.env.PUBLIC_URL+'./images/logo.png'} alt='' />
                     </div>
                     <div className=" text-white text-xl block mr-5" onClick={() => setIsOpen(!isOpen)}>
@@ -63,7 +63,7 @@ export default function Appbar() {
                     </div>
                 </div>
                 {links.map(link => (
-                    <li className='px-4 text-xl'>
+                    <li className='flex px-4 text-xl'>
                         {!link.subLinks ? 
                             <NavLink className='block py-2' to={link.path}  onClick={() => setIsOpen(false)}>{link.text}</NavLink> : 
                             <div 
@@ -77,7 +77,7 @@ export default function Appbar() {
                                 {openDropdown &&
                                     <div className="absolute left-0 top-full bg-white text-gray-600 border rounded py-2">
                                         {link.subLinks.map(sublink => (
-                                            <NavLink className='block px-6 py-1' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
+                                            <NavLink className='block px-6 py-3' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
                                         ))}
                                     </div>
                                 }
