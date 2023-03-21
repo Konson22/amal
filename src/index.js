@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import ChildrenContextProvider from './contexts/ChildrenContextProvider';
 import App from './App';
-import './App.css'
+import './app.css'
 // import './css/style.css'
 import GlobalContextProvider from './contexts/GlobalContextProvider';
 
