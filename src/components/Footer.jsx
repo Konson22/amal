@@ -1,4 +1,5 @@
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaMapMarkedAlt, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { FiMail } from 'react-icons/fi'
 
 
 export default function Footer() {
@@ -30,19 +31,18 @@ export default function Footer() {
           </div>
         </div>
       </div> */}
-      <div className="lg:flex justify-between bg-gray-800 lg:pt-28 pt-20 px-[10%]">
+      <div className="lg:flex justify-between bg-gray-800 lg:py-18 py-10 lg:px-[10%] px-4">
         <div className="flex-1">
-          <h3 className="text-amber-500 text-xl font-semibold">Our patners</h3>
+          <h3 className="text-amber-500 text-3xl font-semibold mb-6">Our Mission</h3>
           <p>
             Children in poverty are more likely to be exposed to the stress of violence, gangs and drugs. This can negatively affect brain development and long-term well-being. Your support during this vulnerable time.
           </p>
         </div>
         <div className="lg:ml-20">
-          <h3 className="text-amber-500 text-xl font-semibold">Donate</h3>
+          <h3 className="text-amber-500 text-xl font-semibold">Policy & Privacy</h3>
           <ul className="">
-            <li className="my-2">About</li>
-            <li className="my-2">About</li>
-            <li className="my-2">About</li>
+            <li className="my-2">Policy</li>
+            <li className="my-2">Privacy</li>
             <li className="my-2">About</li>
           </ul>
         </div>
@@ -56,19 +56,26 @@ export default function Footer() {
           </ul>
         </div>
         <div className="lg:ml-20">
-          <h3 className="text-amber-500 text-xl font-semibold">Donate</h3>
+          <h3 className="text-amber-500 text-xl font-semibold mb-4">Contacts & Address</h3>
           <ul className="">
-            <li className="my-2">About</li>
-            <li className="my-2">About</li>
-            <li className="my-2">About</li>
-            <li className="my-2">About</li>
+            <li className="flex items-center mb-4">
+              <FaMapMarkedAlt className='text-2xl mr-2' />
+              <span>Juba, Malakia</span>
+            </li>
+            <li className="flex items-center mb-4">
+              <FaPhoneAlt className='text-2xl mr-2' />
+              <span>+211920079070</span>
+            </li>
+            <li className="flex items-center mb-4">
+              <FaWhatsapp className='text-2xl mr-2' />
+              <span>+211920079070</span>
+            </li>
+            <li className="flex items-center mb-4">
+              <FiMail className='text-2xl mr-2' />
+              <span>info@amal-mail.com</span>
+            </li>
           </ul>
         </div>
-      </div>
-      <div class="custom-shape-divider-top-1640907434">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-          </svg>
       </div>
     </footer>
   )

@@ -7,12 +7,58 @@ import { useGlobalContext } from '../contexts/GlobalContextProvider';
 
 export default function Navbar() {
 
-  const { setOpenModal } = useGlobalContext();
+  const { setOpenModal, profile } = useGlobalContext();
 
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+    // GUEST USER BUTTONS
+    const guestUserButtons = (
+        <div className="flex">
+            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
+                <FiUser className='text-2xl mr-2' />
+                Login
+            </button>
+            <button className="lg:flex hidden items-center text-base px-4 py-2 bg-blue-400 rounded text-white" onClick={() => setOpenModal('signup')}>
+                <FiUser className='text-2xl mr-2' />
+                Sign up
+            </button>
+        </div>
+    )
+    
+    // AUTH USER BUTTONS
+    const authUserButtons = (
+        <div className="flex">
+            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
+                <FiUser className='text-2xl mr-2' />
+                Login
+            </button>
+            <button className="lg:flex hidden items-center text-base px-4 py-2 bg-blue-400 rounded text-white" onClick={() => setOpenModal('signup')}>
+                <FiUser className='text-2xl mr-2' />
+                Sign up
+            </button>
+        </div>
+    )
+   
+  return (
+    <nav className='flex items-center justify-between sticky left-0 right-0 top-0 z-40 bg-gray-100 border-b-4 border-sky-500  lg:py-3 py-3 lg:px-[3%] px-3'>
+        <div className="lg:hidden text-2xl mr-4" onClick={() => setIsOpen(true)}>
+            <FaBars />
+        </div>
+        <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-sky-500 mr-0">
+            <FaHeartbeat className='lg:text-6xl text-4xl text-rose-500 mr-2' />
+            Amal
+        </div>
+        <NavigationsLinks isOpen={ isOpen } setIsOpen={setIsOpen} />
+        {profile ? authUserButtons : guestUserButtons }
+    </nav>
+  )
+}
+
+const NavigationsLinks = ({ isOpen, setIsOpen }) => {
+
     const [openDropdown, setOpenDropdown] = useState(false);
 
-    // NAVBAR HEADER ON SMALL SCREEN CONTAINING LOGO AND CLOSE BUTTON
+     // NAVBAR HEADER ON SMALL SCREEN CONTAINING LOGO AND CLOSE BUTTON
     const mobileNavHeader = (
         <div className="lg:hidden flex justify-between items-center px-4 py-3">
             <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-white mr-0">
@@ -24,17 +70,10 @@ export default function Navbar() {
             </div>
         </div>
     )
-  return (
-    <nav className='flex items-center justify-between sticky left-0 right-0 top-0 z-40 bg-amber-100 border-b-4 border-amber-500  lg:py-3 py-3 lg:px-[3%] px-3'>
-        <div className="lg:hidden text-2xl mr-4" onClick={() => setIsOpen(true)}>
-            <FaBars />
-        </div>
-        <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-sky-500 mr-0">
-            <FaHeartbeat className='lg:text-6xl text-4xl text-rose-500 mr-2' />
-            Amal
-        </div>
+
+    return(
         <div className={`
-            lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 flex-1 bg-amber-300
+            lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 flex-1 bg-amber-300 text-whit
             duration-300 eas-in-out lg:translate-x-0 translate-x-[-100%] ${isOpen ? 'translate-x-0':''} `
         }>
             <ul className="lg:flex w-[85%] h-full lg:bg-transparent bg-amber-100">
@@ -64,18 +103,7 @@ export default function Navbar() {
                 ))}
             </ul>
         </div>
-        <div className="flex">
-            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
-                <FiUser className='text-2xl mr-2' />
-                Login
-            </button>
-            <button className="lg:flex hidden items-center text-base px-4 py-2 bg-blue-400 rounded text-white" onClick={() => setOpenModal('signup')}>
-                <FiUser className='text-2xl mr-2' />
-                Sign up
-            </button>
-        </div>
-    </nav>
-  )
+    )
 }
 
 

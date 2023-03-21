@@ -25,7 +25,7 @@ const state = {
 
 export default function MoneyUtilization() {
   return (
-    <div className='lg:flex items-center lg:px-[8%] px-5 py-[3rem]'>
+    <div className='lg:flex items-center lg:px-[15%] px-5 py-[3rem]'>
         <div className='flex-1 lg:mr-28 lg:mb-0 mb-4'>
             <h2 className="lg:text-5xl text-3xl font-semibold">How we utilize donations</h2>
             {[...new Array(3)].map(() => (
@@ -37,11 +37,11 @@ export default function MoneyUtilization() {
                 </div>
             ))}
         </div>
-        <div className='h-[450px] lg:w-[450px] '>
+        <div className='h-[370px] lg:w-[370px] '>
             <Pie
               data={state}
-              width={400}
-              height={400}
+              width={300}
+              height={300}
               options={{
                 title:{
                   display:false,

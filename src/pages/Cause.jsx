@@ -6,8 +6,8 @@ export default function Cause() {
       <div className='causes-header lg:h-[25vh] lg:py-0 py-[2.5rem] flex items-center justify-center text-white'>
         <h1 className="lg:text-6xl text-3xl lg:font-bold">Causes</h1>
       </div>
-      <div className="lg:px-[8%] px-3 mt-4">
-        <div className="lg:first-line:grid grid-cols-3 gap-6">
+      <div className="lg:px-[8%] px-3 py-[3rem] mt-4">
+        <div className="lg:grid grid-cols-3 gap-6">
           {[...new Array(3)].map(context => (
             <div className="border p-4">
               <p className="text-base">

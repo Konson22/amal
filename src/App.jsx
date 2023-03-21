@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Navbar from './components/Appbar';
 import Main from './pages/main'
 import Cause from './pages/Cause'
 import Ourwork from './pages/Ourwork'
@@ -8,16 +8,18 @@ import Blog from './pages/Blog'
 import RefugeeCamps from './pages/RefugeeCamps'
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
-import FormsModal from './pages/forms/FormsModal';
+import Login from './pages/forms/Login';
+import Signup from './pages/forms/Signup';
 
 
 function App() {
 
-  const { openModal } = useGlobalContext();
+  const { openModal, setOpenModal } = useGlobalContext();
   
   return (
     <div className="h-full">
-      {openModal && <FormsModal />}
+      {openModal === 'login' && <Login setOpenModal={ setOpenModal } />}
+      {openModal === 'signup' && <Signup setOpenModal={ setOpenModal } />}
       <Navbar />
       <ScrollToTop />
       <Routes>
