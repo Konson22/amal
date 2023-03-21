@@ -18,7 +18,7 @@ export default function RefugeeCamps() {
         </p>
       </div>
       <div className="lg:px-[8%] px-4 py-10">
-        <div className="lg:grid grid-cols-2 gap-6">
+        <div className="lg:grid grid-cols-3 gap-6">
           {camps.map(camp => <CampCArd camp={camp} />)}
         </div>
       </div>
@@ -79,7 +79,7 @@ const camps = [
 
 const CampCArd = ({camp}) => {
   return(
-    <div className="border bg-gray-200 py-2 lg:mb-0 mb-6">
+    <div className="border bg-gray-50 shadow-sm py-2 lg:mb-0 mb-6">
       <Carousel breakPoints={breakPoints} className='camps-carousel lg:h-[300px] h-[270px] relative'>
         {camp.images.map(img => <img className="lg:h-[300px] h-[270px]" src={img} alt='' />)}
       </Carousel>

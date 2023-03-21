@@ -1,9 +1,8 @@
-import AnimateComponent from "../components/AnimateComponent"
 
 
 export default function Cause() {
   return (
-    <AnimateComponent>
+    <>
       <div className='causes-header h-[25vh] flex items-center justify-center text-white'>
         <h1 className="text-6xl font-bold">Causes</h1>
       </div>
@@ -18,6 +17,6 @@ export default function Cause() {
           ))}
         </div>
       </div>
-    </AnimateComponent>
+    </>
   )
 }

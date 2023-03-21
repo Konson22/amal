@@ -25,19 +25,19 @@ export default function Navbar() {
         </div>
     )
   return (
-    <nav className='flex items-center justify-between sticky left-0 right-0 top-0 z-40 bg-sky-600 text-white lg:py-3 py-3 lg:px-[3%] px-3'>
-        <div className="lg:hidden text-2xl text-white mr-4" onClick={() => setIsOpen(true)}>
+    <nav className='flex items-center justify-between sticky left-0 right-0 top-0 z-40 bg-amber-100 border-b-4 border-amber-500  lg:py-3 py-3 lg:px-[3%] px-3'>
+        <div className="lg:hidden text-2xl mr-4" onClick={() => setIsOpen(true)}>
             <FaBars />
         </div>
-        <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-amber-300 mr-0">
-            <FaHeartbeat className='lg:text-6xl text-4xl text-amber-300 mr-2' />
+        <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-sky-500 mr-0">
+            <FaHeartbeat className='lg:text-6xl text-4xl text-rose-500 mr-2' />
             Amal
         </div>
         <div className={`
-            lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 bg-rose-400 flex-1 text-whitee 
-            duration-300 eas-in-out lg:translate-x-0 translate-x-[-100%] ${isOpen ? 'translate-x-0':'bg-yellow-300 '} `
+            lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 flex-1 bg-amber-300
+            duration-300 eas-in-out lg:translate-x-0 translate-x-[-100%] ${isOpen ? 'translate-x-0':''} `
         }>
-            <ul className="lg:flex w-[85%] h-full lg:bg-transparent bg-red-600">
+            <ul className="lg:flex w-[85%] h-full lg:bg-transparent bg-amber-100">
                 {mobileNavHeader}
                 {links.map(link => (
                     <li className='px-4 py-2'>
@@ -65,7 +65,7 @@ export default function Navbar() {
             </ul>
         </div>
         <div className="flex">
-            <button className="flex items-center text-base px-4 py-2 bg-amber-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
+            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
                 <FiUser className='text-2xl mr-2' />
                 Login
             </button>

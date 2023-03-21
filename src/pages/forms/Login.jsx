@@ -1,7 +1,22 @@
+import { useRef } from "react";
 import { FaGoogle, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FiMail, FiUser } from "react-icons/fi";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config";
+
+
 
 export default function Login({ setOpenModal }) {
+
+    const emailRef = useRef()
+    const passRef = useRef()
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value).then(user => {
+            console.log(user)
+        })
+    }
   return (
     <div className='flex bg-white p-2'>
         <div className="lg:w-[45%] lg:p-6 p-3">
@@ -13,14 +28,14 @@ export default function Login({ setOpenModal }) {
             <div className="">
                 <h2 className="text-2xl lg:font-semibold text-center mb-1">Login</h2>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-5">
                     <label htmlFor="email" className="block m-1">E-mail</label>
                     <div className="h-[3.5rem] flex items-center bg-gray-200">
                         <span className="h-full flex items-center justify-center px-3 bg-gray-300 text-2xl">
                             <FiMail />
                         </span>
-                        <input name='email' type="email" placeholder="example@gmail.com" className="h-full w-full bg-transparent focus:border-none focus:outline-none px-3" />
+                        <input ref={emailRef} type="email" placeholder="example@gmail.com" className="h-full w-full bg-transparent focus:border-none focus:outline-none px-3" />
                     </div>
                 </div>
                 <div className="mb-5">
@@ -29,7 +44,7 @@ export default function Login({ setOpenModal }) {
                         <span className="h-full flex items-center justify-center px-3 bg-gray-300 text-2xl">
                             <FiMail />
                         </span>
-                        <input name='password' type="password" placeholder="Enter password" className="h-full w-full bg-transparent focus:border-none focus:outline-none px-3" />
+                        <input ref={passRef} type="password" placeholder="Enter password" className="h-full w-full bg-transparent focus:border-none focus:outline-none px-3" />
                     </div>
                 </div>
                 <div className="mt-8">
