@@ -14,7 +14,7 @@ export default function Appbar() {
     const guestButtons = (
         <div className="">
             <button 
-                className="px-6 lg:py-2 py-1 bg-orange rounded"
+                className="px-6 lg:py-2 py-1 border rounded"
                 onClick={() => setOpenModal('login')}
             >
                 Login
@@ -75,9 +75,11 @@ export default function Appbar() {
                                 {link.text}
                                 <FiChevronDown className={`ml-2 duration-200 ${openDropdown ? 'rotate-[180deg]' : ''}`} />
                                 {openDropdown &&
-                                    <div className="absolute left-0 top-full bg-white text-gray-600 border rounded py-2">
+                                    <div className="absolute left-0 top-full w-full bg-white text-gray-600 border rounded py-2">
                                         {link.subLinks.map(sublink => (
-                                            <NavLink className='block px-6 py-3' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
+                                            <div>
+                                            <NavLink className='hover:bg-orange hover:text-white hover:bg-opacity-75 block px-6 py-3' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
+                                            </div>
                                         ))}
                                     </div>
                                 }
@@ -90,36 +92,6 @@ export default function Appbar() {
         <div className="lg:pr-[4%] pr-2">
             { profile ? authButtons : guestButtons }
         </div>
-        {/* <div className="lg:pr-[4%] pr-2">
-            <div className="flex items-center  lg:mb">
-                <ul className="lg:flex hidden lg:bg-transparent bg-amber-100">
-                    {links.map(link => (
-                        <li className='px-4 text-xl'>
-                            {!link.subLinks ? 
-                                <NavLink className='' to={link.path}  onClick={() => setIsOpen(false)}>{link.text}</NavLink> : 
-                                <div 
-                                    className="cursor-pointer relative flex items-center" 
-                                    onMouseEnter={() => setOpenDropdown(!openDropdown)}
-                                    onMouseLeave={() => setOpenDropdown(!openDropdown)}
-                                    onClick={() => setOpenDropdown(!openDropdown)}
-                                >
-                                    {link.text}
-                                    <FiChevronDown className={`ml-2 duration-200 ${openDropdown ? 'rotate-[180deg]' : ''}`} />
-                                    {openDropdown &&
-                                        <div className="absolute left-0 top-full bg-white border rounded py-2">
-                                            {link.subLinks.map(sublink => (
-                                                <NavLink className='block px-6 py-1' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
-                                            ))}
-                                        </div>
-                                    }
-                                </div>
-                            }
-                        </li>
-                    ))}
-                </ul>
-                { profile ? authButtons : guestButtons }
-            </div>
-        </div> */}
     </div>
   )
 }

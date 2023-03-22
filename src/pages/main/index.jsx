@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import BlogSection from "./BlogSection"
 import Header from "./Header"
 import MoneyUtilization from "./MoneyUtilization"
@@ -25,7 +26,7 @@ export default function Main() {
             An inspiring addition to any kitchen.
             {/* When you sponsor a child you create a powerfull effect, multiplier effect. you help them see beyond the daily strugles of life in poverty. your support release them from a cycle of a short-tem descission and help them gain the ability to being contributing to thier families and communities. */}
           </p>
-          <button className="px-6 py-3 rounded text-yellow-700 bg-white mt-6">Donate</button>
+          <Link className="block px-6 py-3 rounded text-yellow-700 bg-white font-semibold mt-6" to='/donate'>Make Donation</Link>
         </div>
       </div>
       <BlogSection />

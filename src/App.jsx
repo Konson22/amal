@@ -11,6 +11,7 @@ import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
 import Login from './pages/forms/Login';
 import Signup from './pages/forms/Signup';
+import Volunteer from './pages/Volunteer';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path='/our-work' element={<Ourwork />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/donate' element={<Donate />} />
+        <Route path='/volunteer' element={<Volunteer />} />
         <Route path='/refugee-camps' element={<RefugeeCamps />} />
       </Routes>
       <Footer />
