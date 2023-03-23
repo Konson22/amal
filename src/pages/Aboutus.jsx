@@ -5,7 +5,7 @@ export default function Aboutus() {
     <div className="lg:flex lg:px-[10%] px-3 lg:py-[4rem] py-[1rem]">
       <div className="flex-1 lg:mr-12">
         {aboutUsData.map(about => (
-          <div className='p-4 lg:mb-6'>
+          <div className='lg:mb-6 mb-4'>
             <h2 className="text-xl">{about.title}</h2>
             <p className="text-base">{about.text}</p>
           </div>

@@ -1,4 +1,6 @@
 import Carousel from 'react-elastic-carousel'
+import refugeeImage from '../assets/images/refugee.jpeg'
+import refugeeImage2 from '../assets/images/refugee2.jpeg'
 
 const breakPoints = [
   {
@@ -29,51 +31,27 @@ export default function RefugeeCamps() {
 const camps = [
   {
     name:'Kakuma',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage, refugeeImage2, refugeeImage],
   },
   {
     name:'Check point',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage2, refugeeImage2, refugeeImage]
   },
   {
     name:'Malambo',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage, refugeeImage2, refugeeImage]
   },
   {
     name:'Kakuma',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage2, refugeeImage2, refugeeImage]
   },
   {
     name:'Kakuma',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage, refugeeImage2, refugeeImage]
   },
   {
     name:'Kakuma',
-    images:[
-      process.env.PUBLIC_URL+'/images/edmund-lou-dcPThE8G59E-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/ben-white-83tkHLPgg2Q-unsplash.jpg', 
-      process.env.PUBLIC_URL+'/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg'
-    ],
+    images:[refugeeImage2, refugeeImage, refugeeImage]
   },
 ]
 
@@ -81,7 +59,7 @@ const CampCArd = ({camp}) => {
   return(
     <div className="border bg-gray-50 shadow-sm py-2 lg:mb-0 mb-6">
       <Carousel breakPoints={breakPoints} className='camps-carousel lg:h-[300px] h-[270px] relative'>
-        {camp.images.map(img => <img className="lg:h-[300px] h-[270px]" src={img} alt='' />)}
+        {camp.images.map(img => <img className="lg:h-[270px] h-[250px]" src={img} alt='' />)}
       </Carousel>
       <div className="p-2">
         <h3 className="text-xl font-bold">{camp.name}</h3>

@@ -17,7 +17,6 @@ export default function GlobalContextProvider({children}) {
     const listen = onAuthStateChanged(auth, user => {
       if(user){
         setProfile({ name:user.displayName, avatar:user.photoURL})
-        console.log(user)
       }
     })
 

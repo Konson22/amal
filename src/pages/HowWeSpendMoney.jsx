@@ -2,7 +2,7 @@ import Chart from "../components/Chart";
 
 export default function HowWeSpendMoney() {
   return (
-    <div className='lg:px-[17%] px-3 py-[3rem]'>
+    <div className='lg:px-[17%] px-3 lg:py-[3rem] py-[1rem]'>
         {/* <div className='causes-header lg:py-[4.5rem] py-[2.5rem] lg:px-[24%] px-3 text-white'>
             <h1 className="lg:text-6xl text-3xl lg:font-bold">
                 WHERE DOES YOU DONATION GO?
@@ -62,7 +62,7 @@ export default function HowWeSpendMoney() {
                     </p>
                 </div>
             </div>
-            <div className="lg:w-[40%] border p-4">
+            <div className="lg:w-[40%] border lg:mt-0 mt-5 p-4">
                 <Chart />
             </div>
         </div>
