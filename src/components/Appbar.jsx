@@ -3,7 +3,7 @@ import { FaUser, FaBars, FaTimes } from 'react-icons/fa'
 import { FiBell, FiChevronDown } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom'
 import { useGlobalContext } from '../contexts/GlobalContextProvider'
-
+import logoImage from '../assets/images/logo.png'
 
 export default function Appbar() {
 
@@ -25,9 +25,6 @@ export default function Appbar() {
     
     const authButtons = (
         <div className="flex items-center ml-6">
-            {/* <button className="px-6 lg:py-2 py-1 bg-sky-600 text-white rounded" onClick={() => setOpenModal('login')}>
-                Donate
-            </button> */}
             <span className="text-2xl lg:ml-8 ml-4">
                 <FiBell className="" />
             </span>
@@ -47,7 +44,7 @@ export default function Appbar() {
             <div className="lg:hidden text-white text-xl block mr-5" onClick={() => setIsOpen(!isOpen)}>
                 { isOpen ? <FaTimes /> : <FaBars />}
             </div>
-            <img className="lg:h-[3.5rem] h-[2.2rem]" src={process.env.PUBLIC_URL+'./images/logo.png'} alt='' />
+            <img className="lg:h-[3.5rem] h-[2.2rem]" src={logoImage} alt='' />
         </div>
         <div className={`
             lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 bg-amber-300
@@ -56,7 +53,7 @@ export default function Appbar() {
             <ul className="lg:flex h-full lg:bg-transparent bg-white lg:text-white text-gray-600">
                 <div className="lg:hidden bg-orange flex items-center justify-between mb-2">
                     <div className=" bg-black rounded-r-full border-r-2 shadow-lg border-white overflow-hidden lg:pr-12 pr-4 py-3 lg:pl-[4%] pl-2">
-                        <img className="h-[2.2rem]" src={process.env.PUBLIC_URL+'./images/logo.png'} alt='' />
+                        <img className="h-[2.2rem]" src={logoImage} alt='' />
                     </div>
                     <div className=" text-white text-xl block mr-5" onClick={() => setIsOpen(!isOpen)}>
                         <FaTimes />
@@ -98,18 +95,15 @@ export default function Appbar() {
 
 
 
-const howtohelpSublink = [
-    {text:'Help with donation', path:'/help'},
-    {text:'Volunteer', path:'/volunteer'},
-]
 const links = [
     {text:'Home', path:'/'},
-    {text:'Causes', path:'/causes'},
-    {text:'How to help', subLinks:howtohelpSublink, path:'/our-work'},
+    {text:'How to help', path:'/get-involved'},
+    {text:'How we use donations', path:'/how-we-use-donations'},
     {text:'Refugee camps', path:'/refugee-camps'},
-    {text:'About us', path:'/about'},
+    {text:'Causes', path:'/causes'},
+    {text:'About us', path:'/about-us'},
     {text:'Blog', path:'/blog'},
-    {text:'donate', path:'/Donate'},
+    // {text:'donate', path:'/Donate'},
     // {text:'Others', subLinks:[
     //     { text:'Services', path:'/services' },
     //     { text:'Services', path:'/services' },

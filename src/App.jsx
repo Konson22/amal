@@ -4,7 +4,6 @@ import Navbar from './components/Appbar';
 import Main from './pages/main'
 import Donate from './pages/Donate'
 import Cause from './pages/Cause'
-import Ourwork from './pages/Ourwork'
 import Blog from './pages/Blog'
 import RefugeeCamps from './pages/RefugeeCamps'
 import { useGlobalContext } from './contexts/GlobalContextProvider';
@@ -12,6 +11,9 @@ import ScrollToTop from './helpers/ScrollToTop';
 import Login from './pages/forms/Login';
 import Signup from './pages/forms/Signup';
 import Volunteer from './pages/Volunteer';
+import HowWeSpendMoney from './pages/HowWeSpendMoney';
+import GetInvolved from './pages/GetInvolved';
+import Aboutus from './pages/Aboutus';
 
 
 function App() {
@@ -27,8 +29,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/causes' element={<Cause />} />
-        <Route path='/our-work' element={<Ourwork />} />
+        <Route path='/about-us' element={<Aboutus />} />
+        <Route path='/get-involved' element={<GetInvolved />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/how-we-use-donations' element={<HowWeSpendMoney />} />
         <Route path='/donate' element={<Donate />} />
         <Route path='/volunteer' element={<Volunteer />} />
         <Route path='/refugee-camps' element={<RefugeeCamps />} />

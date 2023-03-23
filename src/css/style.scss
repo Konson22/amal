@@ -4,14 +4,6 @@
 
 
 @font-face {
-    font-family: 'Staatliches';
-    src: url('../assets/fonts/Staatliches-Regular.ttf');
-}
-@font-face {
-    font-family: 'Southmore';
-    src: url('../assets/fonts/Southmore.ttf');
-}
-@font-face {
     font-family: 'SignikaNegative';
     src: url('../assets/fonts/SignikaNegative-SemiBold.ttf');
 }
@@ -23,6 +15,7 @@
 body{
     font-family: 'SignikaNegative-Light';
     // color:rgb(117, 117, 117);
+    font-size:18px;
 
 }
 
@@ -34,7 +27,7 @@ h1,h2,h3,h4,h5,h6{
 .header-container{
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../assets/images/charlein-gracia--Ux5mdMJNEA-unsplash.jpg');
+        url('../assets/images/refugee-childern.jpeg');
         background-size: 100% 100%;
         background-size: cover;
     background-position: center;
@@ -42,7 +35,7 @@ h1,h2,h3,h4,h5,h6{
 .causes-header{
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../assets/images/charlein-gracia--Ux5mdMJNEA-unsplash.jpg');
+        url('../assets/images/refugee-childern.jpeg');
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -51,7 +44,7 @@ h1,h2,h3,h4,h5,h6{
 .form{
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../assets/images/charlein-gracia--Ux5mdMJNEA-unsplash.jpg');
+        url('../assets/images/children.jpeg');
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;

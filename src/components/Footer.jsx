@@ -1,4 +1,4 @@
-import { FaMapMarkedAlt, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { FaMapMarkedAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 
 
@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="flex-1">
           <h3 className="text-amber-500 text-3xl font-semibold mb-6">Our Mission</h3>
           <p>
-            Children in poverty are more likely to be exposed to the stress of violence, gangs and drugs. This can negatively affect brain development and long-term well-being. Your support during this vulnerable time.
+            We are a group of students from the University of Juba in South Sudan's GDSC club, and we are passionate about using technology to solve issues in our local communities.
           </p>
         </div>
         <div className="lg:ml-20">

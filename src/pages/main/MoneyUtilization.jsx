@@ -1,60 +1,41 @@
-import { Pie } from 'react-chartjs-2';
-// import { FaHandHoldingHeart } from 'react-icons/fa'
-
-
-const state = {
-  labels: ['Camp', 'Education', 'Expense'],
-  datasets: [
-    {
-      label: 'Donation Usage',
-      backgroundColor: [
-        '#c7b517',
-        '#59c738',
-        '#9e38c7'
-      ],
-      hoverBackgroundColor: [
-      '#175000',
-      '#003350',
-      '#35014F'
-      ],
-      data: [15, 30, 45]
-    }
-  ]
-}
+import Chart from "../../components/Chart";
 
 
 export default function MoneyUtilization() {
   return (
     <div className='lg:flex items-center lg:px-[15%] px-5 py-[3rem]'>
-        <div className='flex-1 lg:mr-28 lg:mb-0 mb-4'>
-            <h2 className="lg:text-5xl text-3xl font-semibold">How we utilize donations</h2>
-            {[...new Array(3)].map(() => (
-                <div className="mt-6">
-                    <h3 className="text-2xl">Donation</h3>
-                    <p>
-                        Children in poverty are more likely to be exposed to the stress of violence, gangs and drugs. This can negatively affect brain development and long-term well-being. Your support during this vulnerable time.
-                    </p>
-                </div>
-            ))}
-        </div>
-        <div className='h-[370px] lg:w-[370px] '>
-            <Pie
-              data={state}
-              width={300}
-              height={300}
-              options={{
-                title:{
-                  display:false,
-                  text:'Average Rainfall per month',
-                  fontSize:20,
-                },
-                legend:{
-                  display:false,
-                  position:'right'
-                }
-              }}
-            />
-        </div>
+      <div className='flex-1 lg:mr-28 lg:mb-0 mb-4'>
+        <h2 className="lg:text-4xl text-2xl mb-4 font-semibold">WHERE DOES YOU DONATION GO</h2>
+        {/* <p>
+          Our inspiration for Amal came from these programs specifically. Our goal is to connect the refugees to supporters who can offer a helping hand to address their problems so they may meet their basic requirements, including
+        </p> */}
+        <ul className="list-decimal">
+          <li className="m-2">
+            Access to emergency medical care.
+          </li>
+          <li className="m-2">
+            place to eat, drink, and sleep.
+          </li>
+          <li className="m-2">
+            Sanitation and hygiene kits to assist stop the spread of disease
+          </li>
+          <li className="m-2">
+            Secure environments where young refugee kids may learn and play
+          </li>
+          <li className="m-2">
+            Access to education
+          </li>
+          <li className="m-2">
+            Psychosocial support to aid traumatized people in their recovery
+          </li>
+          <li className="m-2">
+            Giving families in need financial grants so they can buy what they need
+          </li>
+        </ul>
+      </div>
+      <div className='h-[370px] lg:w-[370px] '>
+        <Chart />
+      </div>
     </div>
   )
 }
