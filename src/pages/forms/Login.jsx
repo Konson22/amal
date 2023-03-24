@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FaGoogle, FaInstagram, FaLinkedinIn, FaTimes, FaTwitter } from "react-icons/fa";
 import { FiMail, FiUser, FiLock } from "react-icons/fi";
-import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth"
+import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth"
 import { useGlobalContext } from "../../contexts/GlobalContextProvider";
 import { auth } from "../../config";
 
@@ -38,14 +38,13 @@ export default function Login() {
 
     const handleSubmit = async e => {
        e.preventDefault()
-       signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value)
-       .then(res => {
-        setProfile({name:''})
-        setOpenModal(null)
-       })
-       .catch(err => {
-           console.log(err)
-       })
+    //     signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value)
+    //    .then(res => res)
+    //    .catch(err => {
+    //        console.log(err)
+    //    })
+    //    setProfile({name:''})
+    //     setOpenModal(null)
     }
   return (
     <div className='lg:px-[35%] px-[5%] h-screen fixed inset-0 z-50 overflow-hidden bg-black bg-opacity-25 backdrop-blur-sm pt-[5rem]'>
