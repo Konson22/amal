@@ -1,9 +1,11 @@
-
+import bgImage from '../assets/images/refugee.jpeg'
 
 export default function Cause() {
   return (
     <>
-      <div className='causes-header lg:h-[25vh] lg:py-0 py-[2.5rem] flex items-center justify-center text-white'>
+      <div className='lg:h-[35vh] lg:py-0 py-[2.5rem] bg-cover flex items-center justify-center text-white' 
+        style={{backgroundImage:`url('${bgImage}')`}}
+      >
         <h1 className="lg:text-6xl text-3xl lg:font-bold">Causes</h1>
       </div>
       <div className="lg:px-[8%] px-3 py-[3rem] mt-4">

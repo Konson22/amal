@@ -11,7 +11,7 @@ export default function GetInvolved() {
       </div>
       <div className="lg:px-[10%] px-3 mt-8 lg:grid grid-cols-3 gap-5">
         {getInvolveData.map(about => (
-          <div className='bg-gray-200 px-4 py-6 text-center mb-6'>
+          <div className='bg-gray-2000 px-4 py-6 text-center mb-6'>
             <div className="text-6xl flex justify-center">
               {about.icon}
             </div>

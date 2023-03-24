@@ -44,3 +44,54 @@ export const getInvolveData = [
         icon:<FaHandHoldingHeart />
     },
 ]
+
+export const campsData = [
+    {
+        name:'JUBA UNIMISS CAMP',
+        text:`
+            Juba IDP Camp 1: There are 7,289 people [2,146 households] living in this site. There are both internally displace and people who left the country prior, and then returned to South Sudan and now live in the camp, Among the internally displaced, most are from Central Equatoria and Unity states. Of the occupants, 49% are female and 51% are male – 80% of the occupants are adults and 20% are children.
+        `,
+        images:[]
+    },
+    {
+        name:'Juba IDP Camp 3',
+        text:`
+            There are 24,115 people [7,151 households] living in this site. There are both internally displace and people who left the country prior, and then returned to South Sudan and now live in the camp. Among the internally displaced, most are from Jonglei and Unity states. Of the occupants, 49% are female and 51% are male – 78% of the occupants are adults and 22% are children.
+        `,
+        images:[]
+    },
+    {
+        name:'Mangala Camp',
+        text:`When you sponsor a child you create a powerfull effect, multiplier effect. you help them see beyond the daily strugles of life in poverty. your support release them from a cycle of a short-tem descission and help them gain the ability to being contributing to thier families and communities.`,
+        images:[]
+    },
+    {
+        name:'BENTIU IDP CAMP',
+        text:`
+            As per January 2023 population count findings, the Bentiu IDP camp population stands at 100,356 individuals (16,821 households) in 11,988 inhabited shelters (on average of 8 individuals per shelter). This represents a two per cent decrease compared to October 2022.
+        `,
+        images:[]
+    },
+    {
+        name:'MANGALLA IDP CAMP',
+        text:`
+            Established in 2020 as result of large-scale displacement caused by flooding in Jonglei state, there are currently 38,658 of IDPs in Mangalla IDP camp, displaced persons are residing in IDP sites in zone 1,2 and 3.
+        `,
+        images:[]
+    },
+    {
+        name:'EMALAKAL POC CAMP',
+        text:`
+            The Malakal PoC site was born out of the civil war that started in South Sudan on 15 December 2013. At the time, civilians were fleeing from indiscriminate and deliberate attacks and their only place of refuge was the UNMISS Base in Malakal. To date, it remains a crucial safe haven for 34,056 IDPs/civilians (source: DRC April 2021 population head count) who still perceive the security environment outside the PoC site as unsafe, with the PoC site continuing to serve as a critical coping mechanism for populations facing risk in Malakal and beyond.
+        `,
+        images:[]
+    },
+    {
+        name:'NAIVASHA IDP CAMP',
+        text:`
+            In January 2023, the monthly population count was conducted at Masna Collective Centre where 2,909 individuals/ 598 households were identified and Naivasha IDP Camp where 6,713 individuals/ 1,726 households were counted. The population
+            of Naivasha IDP Camp marginally decreased by 323 individuals since December 2023.
+        `,
+        images:[]
+    },
+]

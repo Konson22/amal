@@ -14,6 +14,7 @@ import Volunteer from './pages/Volunteer';
 import HowWeSpendMoney from './pages/HowWeSpendMoney';
 import GetInvolved from './pages/GetInvolved';
 import Aboutus from './pages/Aboutus';
+import Joinus from './pages/Joinus';
 
 
 function App() {
@@ -28,14 +29,15 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/causes' element={<Cause />} />
-        <Route path='/about-us' element={<Aboutus />} />
-        <Route path='/get-involved' element={<GetInvolved />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/how-we-use-donations' element={<HowWeSpendMoney />} />
+        <Route path='/causes' element={<Cause />} />
         <Route path='/donate' element={<Donate />} />
+        <Route path='/join-us' element={<Joinus />} />
+        <Route path='/about-us' element={<Aboutus />} />
         <Route path='/volunteer' element={<Volunteer />} />
+        <Route path='/get-involved' element={<GetInvolved />} />
         <Route path='/refugee-camps' element={<RefugeeCamps />} />
+        <Route path='/how-we-use-donations' element={<HowWeSpendMoney />} />
       </Routes>
       <Footer />
     </div>

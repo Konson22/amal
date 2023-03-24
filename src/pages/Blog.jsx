@@ -1,19 +1,29 @@
 import { useState } from "react";
 import { FaHeartbeat, FaRegComments } from "react-icons/fa";
-
+// import { campsData } from "../assets/data";
+import image from '../assets/images/ben-white-83tkHLPgg2Q-unsplash.jpg'
 
 export default function Blog() {
   return (
     <>
-      <div className='flex px-[8%] pt-8'>
-        <div className="flex-1">
-          <h1 className="lg:text-3xl text-xl">Listen to refugees issues</h1>
-          <div className="mt-6">
-            {posts.map(post => <PostCard post={post} />)}
+      {/* <div className="px-[8%] py-3 bg-gray-200">
+        <ul className="flex">
+          {campsData.map(camp => (
+            <li className="px-4 py-2 border mr-3 rounded">{camp.name}</li>
+          ))}
+        </ul>
+      </div> */}
+      <div className='lg:px-[8%] px-4 lg:pt-8 pt-5'>
+        <div className='flex '>
+          <div className="flex-1">
+            <h1 className="lg:text-3xl text-xl">Listen to refugees issues</h1>
+            <div className="mt-6">
+              {posts.map(post => <PostCard post={post} />)}
+            </div>
           </div>
-        </div>
-        <div className="lg:block hidden w-[40%]">
+          <div className="lg:block hidden w-[40%]">
 
+          </div>
         </div>
       </div>
     </>
@@ -25,15 +35,15 @@ const PostCard = ({ post }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return(
-    <div className='border shadow-sm mb-8 lg:p-3 p-2'>
-      <div className="flex items-center mb-3">
+    <div className='border bg-gray-100 shadow-sm mb-8 lg:p-3 p-2'>
+      {/* <div className="flex items-center mb-3">
         <img  className='lg:h-[50px] lg:w-[50px] h-[40px] w-[40px] rounded-full' src={post.image} alt='' />
         <div className="ml-3">
           <h5 className="font-bold m-0">{post.user} - <span className="text-sm text-gray-400">{post.country}</span></h5>
           <span className="text-sm text-gray-400">12/02/2023</span>
         </div>
-      </div>
-      {post.image && <img  className='lg:h-[300px] h-[200px]' src={post.image} alt='' />}
+      </div> */}
+      {post.image && <img  className='lg:h-[300px] h-[200px]' src={image} alt='' />}
       <div className="py-3">
         <h4 className="text-2xl font-bold mb-2">{post.title}</h4>
         <p className="">{post.body}</p>

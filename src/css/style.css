@@ -39,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
+.rec-pagination {
+  display: none !important;
+}
+
 .rec.rec-arrow {
   background-color: transparent !important;
   border: none !important;

@@ -14,14 +14,12 @@
 
 body{
     font-family: 'SignikaNegative-Light';
-    // color:rgb(117, 117, 117);
     font-size:18px;
 
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'SignikaNegative';
-    // color:rgb(97, 96, 96);
 }
 
 .header-container{
@@ -51,6 +49,9 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+.rec-pagination{
+    display:none !important;
+}
 
 .rec.rec-arrow{
     background-color: transparent !important;
