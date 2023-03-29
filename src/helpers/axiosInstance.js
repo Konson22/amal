@@ -4,6 +4,7 @@ import axios from 'axios'
 //     withCredentials: true, credentials: 'include'
 // }
 const axiosInstance = axios.create({
+  // baseURL:'http://localhost:3001',
     baseURL:process.env.REACT_APP_BACK_END_URL,
     withCredentials: true, 
     credentials: 'include'

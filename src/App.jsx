@@ -1,48 +1,46 @@
-import { Routes, Route } from 'react-router-dom'
+import { Suspense, lazy } from 'react';
+import {Routes, Route} from 'react-router-dom'
 import Footer from './components/Footer';
-import Navbar from './components/Appbar';
-import Main from './pages/main'
-import Donate from './pages/Donate'
-import Cause from './pages/Cause'
-import Blog from './pages/Blog'
-import RefugeeCamps from './pages/RefugeeCamps'
+import Navbar from './components/Navbar';
 import { useGlobalContext } from './contexts/GlobalContextProvider';
-import ScrollToTop from './helpers/ScrollToTop';
-import Login from './pages/forms/Login';
-import Signup from './pages/forms/Signup';
-import Volunteer from './pages/Volunteer';
-import HowWeSpendMoney from './pages/HowWeSpendMoney';
-import GetInvolved from './pages/GetInvolved';
-import Aboutus from './pages/Aboutus';
-import Joinus from './pages/Joinus';
+import Login from './pages/forms/Login'
+import Signup from './pages/forms/Signup'
+
+const Home = lazy(() => import('./pages/home'));
+const OnboardingPage3 = lazy(() => import('./pages/OnboardingPage3'));
 
 
 function App() {
 
   const { openModal, setOpenModal } = useGlobalContext();
-  
+
   return (
-    <div className="h-full">
+    <div className='h-full'>
+      {/* <Login /> */}
       {openModal === 'login' && <Login setOpenModal={ setOpenModal } />}
       {openModal === 'signup' && <Signup setOpenModal={ setOpenModal } />}
-      <Navbar />
-      <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/causes' element={<Cause />} />
-        <Route path='/donate' element={<Donate />} />
-        <Route path='/join-us' element={<Joinus />} />
-        <Route path='/about-us' element={<Aboutus />} />
-        <Route path='/volunteer' element={<Volunteer />} />
-        <Route path='/get-involved' element={<GetInvolved />} />
-        <Route path='/refugee-camps' element={<RefugeeCamps />} />
-        <Route path='/how-we-use-donations' element={<HowWeSpendMoney />} />
-      </Routes>
-      <Footer />
+      {/* <Navbar /> */}
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/onboarding-page' element={<OnboardingPage3 />} />
+        </Routes>
+        {/* <Footer /> */}
+      </Suspense>
     </div>
   );
 }
+
+
+
+const Loader = () => {
+  return(
+    <div className='h-[40vh] p-[3rem]'>
+      Loading
+    </div>
+  )
+}
+
 
 
 export default App;

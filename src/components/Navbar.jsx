@@ -1,103 +1,55 @@
-import { FiChevronDown } from 'react-icons/fi'
 import { useState } from 'react'
-import { FaBars, FaTimes, FaHeartbeat } from 'react-icons/fa'
-import { FiUser } from 'react-icons/fi'
+// import { FaFacebook, FaTwitter, FaInstagram, FaHandHoldingHeart, FaHandHoldingUsd } from 'react-icons/fa'
+import { FaHeartbeat, FaUser } from 'react-icons/fa'
+import { FiBell, FiChevronDown, FiMail } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom'
-import { useGlobalContext } from '../contexts/GlobalContextProvider';
 
 export default function Navbar() {
 
-  const { setOpenModal, profile } = useGlobalContext();
-
-  const [isOpen, setIsOpen] = useState(false);
-
-    // GUEST USER BUTTONS
-    const guestUserButtons = (
-        <div className="flex">
-            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
-                <FiUser className='text-2xl mr-2' />
-                Login
-            </button>
-            <button className="lg:flex hidden items-center text-base px-4 py-2 bg-blue-400 rounded text-white" onClick={() => setOpenModal('signup')}>
-                <FiUser className='text-2xl mr-2' />
-                Sign up
-            </button>
-        </div>
-    )
     
-    // AUTH USER BUTTONS
-    const authUserButtons = (
-        <div className="flex">
-            <button className="flex items-center text-base px-4 py-2 bg-rose-500 rounded text-white mr-3" onClick={() => setOpenModal('login')}>
-                <FiUser className='text-2xl mr-2' />
-                Login
-            </button>
-            <button className="lg:flex hidden items-center text-base px-4 py-2 bg-blue-400 rounded text-white" onClick={() => setOpenModal('signup')}>
-                <FiUser className='text-2xl mr-2' />
-                Sign up
-            </button>
-        </div>
-    )
-   
   return (
-    <nav className='flex items-center justify-between sticky left-0 right-0 top-0 z-40 bg-gray-100 border-b-4 border-sky-500  lg:py-3 py-3 lg:px-[3%] px-3'>
-        <div className="lg:hidden text-2xl mr-4" onClick={() => setIsOpen(true)}>
-            <FaBars />
+    <nav className='flex justify-between sticky left-0 right-0 top-0 z-40 bg-gray-100 lg:px-[10%] px-4 py-4'>
+        <div className="flex items-center">
+            {/* <FaHeartbeat className="text-amber-500 mr-3 lg:text-6xl text-3xl" /> */}
+            <span className="lg:text-3xl text-xl">Help</span>
         </div>
-        <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-sky-500 mr-0">
-            <FaHeartbeat className='lg:text-6xl text-4xl text-rose-500 mr-2' />
-            Amal
-        </div>
-        <NavigationsLinks isOpen={ isOpen } setIsOpen={setIsOpen} />
-        {profile ? authUserButtons : guestUserButtons }
+        <NavigationLinks />
+        <span className="text-2xl">
+            <FaUser />
+        </span>
     </nav>
   )
 }
 
-const NavigationsLinks = ({ isOpen, setIsOpen }) => {
 
-    const [openDropdown, setOpenDropdown] = useState(false);
+const NavigationLinks = () => {
 
-     // NAVBAR HEADER ON SMALL SCREEN CONTAINING LOGO AND CLOSE BUTTON
-    const mobileNavHeader = (
-        <div className="lg:hidden flex justify-between items-center px-4 py-3">
-            <div className="flex items-center lg:w-auto w-full lg:text-4xl text-2xl lg:mr-8 text-white mr-0">
-                <FaHeartbeat className='lg:text-7xl text-4xl text-rose-300 mr-2' />
-                Amal
-            </div>
-            <div className="text-2xl text-white" onClick={() => setIsOpen(false)}>
-                <FaTimes />
-            </div>
-        </div>
-    )
-
+    const [isOpen, setIsOpen] = useState(false)
     return(
-        <div className={`
-            lg:static fixed inset-0 lg:bg-transparent bg-opacity-75 flex-1 bg-amber-300 text-whit
-            duration-300 eas-in-out lg:translate-x-0 translate-x-[-100%] ${isOpen ? 'translate-x-0':''} `
-        }>
-            <ul className="lg:flex w-[85%] h-full lg:bg-transparent bg-amber-100">
-                {mobileNavHeader}
+        <div className='lg:flex hidden flex-1 text-white'>
+            <ul className="flex h-full lg:bg-transparent bg-gray-700">
                 {links.map(link => (
-                    <li className='px-4 py-2'>
-                        {!link.subLinks ? 
-                            <NavLink className='' to={link.path}  onClick={() => setIsOpen(false)}>{link.text}</NavLink> : 
-                            <div 
-                                className="cursor-pointer relative flex items-center" 
-                                onMouseEnter={() => setOpenDropdown(!openDropdown)}
-                                onMouseLeave={() => setOpenDropdown(!openDropdown)}
-                                onClick={() => setOpenDropdown(!openDropdown)}
-                            >
+                    <li className='px-4 py-4 hover:bg-amber-500 relative'>
+                        {!link.subLinks  ? 
+                            <NavLink className='lg:flex items-center' to={link.path}>
                                 {link.text}
-                                <FiChevronDown className={`ml-2 duration-200 ${openDropdown ? 'rotate-[180deg]' : ''}`} />
-                                {openDropdown &&
-                                    <div className="absolute left-0 top-full bg-white border rounded py-2">
-                                        {link.subLinks.map(sublink => (
-                                            <NavLink className='block px-6 py-1' to={sublink.path}  onClick={() => setIsOpen(false)}>{sublink.text}</NavLink>
-                                        ))}
-                                    </div>
-                                }
-                            </div>
+                                {link.subLinks && <FiChevronDown className='ml-2' />}
+                            </NavLink>:
+                            <span className="flex items-center cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                                {link.text}
+                                {link.subLinks && <FiChevronDown className='ml-2' />}
+                            </span>
+                        }
+                        {(isOpen && link.subLinks) &&
+                            <ul className='hiddens w-[150px] lg:absolute top-full left-0 rounded shadow lg:border lg:bg-white lg:text-gray-600 p-4'>
+                                {link.subLinks.map((sub, index) => (
+                                    <li className="mb-2" key={index}>
+                                        <NavLink className='lg:flex items-center' to={sub.path}>
+                                            {sub.text}
+                                        </NavLink>
+                                    </li>
+                                ))}
+                            </ul>
                         }
                     </li>
                 ))}
@@ -106,17 +58,15 @@ const NavigationsLinks = ({ isOpen, setIsOpen }) => {
     )
 }
 
-
 const links = [
     {text:'Home', path:'/'},
-    {text:'Causes', path:'/causes'},
-    {text:'Our Work', path:'/our-work'},
-    {text:'Refugee camps', path:'/refugee-camps'},
+    {text:'How To Help', path:'/blog', subLinks:[
+        {text:'Volunteer', path:'/volunteer'},
+        {text:'Donate', path:'/donate'},
+    ]},
+    {text:'Camps', path:'/camps'},
+    {text:'Our Impact', path:'/our-impact'},
+    {text:'News', path:'/news'},
+    {text:'Contact', path:'/contact'},
     {text:'About us', path:'/about'},
-    {text:'Blog', path:'/blog'},
-    {text:'Others', subLinks:[
-        { text:'Services', path:'/services' },
-        { text:'Services', path:'/services' },
-        { text:'Services', path:'/services' },
-    ], path:'/other'},
 ]
