@@ -1,19 +1,13 @@
+import { Link } from "react-router-dom";
 import { FaSuitcase, FaThLarge } from "react-icons/fa";
-import { FiSettings, FiSearch, FiMenu } from "react-icons/fi";
+import { FiSettings } from "react-icons/fi";
 import { FcAutomatic } from "react-icons/fc";
 import EducationImage from '../../assets/images/school.jpeg'
 
 export default function HomePage() {
   return (
     <div className='h-full'>
-      <div className="flex justify-between px-4 py-3 bg-gray-50 shadow-md shadow-gray-200 sticky top-0 left-0 right-0 z-50">
-        <div className="bg-bgcol text-white h-[2.5rem] w-[2.5rem] flex items-center justify-center rounded-xl p-1 text-2xl">
-          <FiMenu />
-        </div>
-        <div className="border border-bgcol h-[2.5rem] w-[2.5rem] flex items-center justify-center rounded-xl text-2xl">
-          <FiSearch />
-        </div>
-      </div>
+      {/* <Navbar /> */}
       <div className='px-[8%] mt-5'>
         {/* Start of header section */}
         <div className="bg-bgcol mb-8 px-5 py-6 rounded-3xl text-white text-center">
@@ -25,18 +19,18 @@ export default function HomePage() {
         </div>
         {/* Start of navi links section */}
         <div className="flex justify-between">
-          <div className="flex flex-col items-center">
+          <Link className="flex flex-col items-center" to='/'>
             <span className="h-12 w-12 flex items-center justify-center bg-gray-200 rounded-full text-2xl">
               <FaThLarge />
             </span>
             <span className='text-sm mt-2'>All</span>
-          </div>
-          <div className="flex flex-col items-center">
+          </Link>
+          <Link className="flex flex-col items-center" to='/onboarding-page'>
             <span className="h-12 w-12 flex items-center justify-center bg-gray-200 rounded-full text-2xl">
               <FaSuitcase />
             </span>
             <span className='text-sm mt-2'>Medical</span>
-          </div>
+          </Link>
           <div className="flex flex-col items-center">
             <span className="h-12 w-12 flex items-center justify-center bg-gray-200 rounded-full text-2xl">
               <FcAutomatic />
