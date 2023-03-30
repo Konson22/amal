@@ -1,14 +1,12 @@
 import { Suspense } from 'react';
 import AnimateRoutes from './AnimateRoutes';
-import Navbar from './components/Navbar';
 
 
 function App() {
 
   return (
-    <div className='h-full'>
+    <div className='h-ful'>
       <Suspense fallback={<Loader />}>
-        <Navbar />
         <AnimateRoutes />
       </Suspense>
     </div>

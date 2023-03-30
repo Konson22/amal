@@ -10,10 +10,10 @@ export default function HomePage() {
       {/* <Navbar /> */}
       <div className='px-[8%] mt-5'>
         {/* Start of header section */}
-        <div className="bg-bgcol mb-8 px-5 py-6 rounded-3xl text-white text-center">
+        <div className="bg-primary mb-8 px-5 py-6 rounded-3xl text-white text-center">
           <h1 className="text-2xl font-bold">Start Your Own Funding</h1>
           <div className="text-xl">Create your own donation post</div>
-          <button className="bg-white text-bgcol rounded mt-4 py-2 px-3">
+          <button className="bg-white text-primary rounded mt-4 py-2 px-3">
             Start Now
           </button>
         </div>
@@ -56,7 +56,7 @@ export default function HomePage() {
               <p>Education Dono for poor child</p>
               <span className="text-sm text-gray-400">By: Sosima</span>
               <div className="flex items-center justify-between mt-3">
-                <span className="text-sm font-semibold text-bgcol">$251 Raised</span>
+                <span className="text-sm font-semibold text-primary">$251 Raised</span>
                 <span className="text-sm">Target - $3500</span>
               </div>
             </div>

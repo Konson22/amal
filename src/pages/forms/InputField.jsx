@@ -9,7 +9,7 @@ export default function InputField({label, key='', ...props}){
         <div className="mb-6" key={key}>
             <label htmlFor={label}>{label}</label>
             <input
-                className={`lg:h-[3.5rem] h-[3rem] focus:border-b-2 focus:border-b-green-500 focus:outline-none bg-gray-200 w-full  px-3 ${(meta.touched && meta.error) ? 'border-b-red-500':''}`}
+                className={`lg:h-[3.5rem] h-[3.4rem] border border-gray-300 focus:border-green-500 rounded focus:outline-none bg-gray-100 w-full  px-3 ${(meta.touched && meta.error) ? 'border-b-red-500':''}`}
                 placeholder={field.placeholder}
                 disabled={props.isLoading}
                 {...field}

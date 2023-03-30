@@ -1,12 +1,12 @@
-import { FaGoogle, FaInstagram, FaLinkedinIn, FaTimes, FaTwitter } from "react-icons/fa";
-import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth"
+import { FaGoogle, FaTwitter } from "react-icons/fa";
+import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth"
 import { useGlobalContext } from "../../contexts/GlobalContextProvider";
 import { auth } from "../../config";
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import InputField from './InputField';
 import { useState } from "react";
-import { FiUser } from "react-icons/fi";
+import { FiXCircle } from "react-icons/fi";
 
 
 export default function Login() {
@@ -16,17 +16,13 @@ export default function Login() {
     const [message, setMessage] = useState('');
     
     const GoogleAuthHandler =  () => {
-      setIsLoading(true)
       signInWithPopup(auth, new GoogleAuthProvider()).then(credential => {
         const user = { name:credential.user.displayName, avatar:credential.user.photoURL}
-        console.log(user)
         setProfile(user)
         setOpenModal(null)
-        setIsLoading(false)
       }, err => {
+        console.dir(err)
         setMessage(err?.code?.split('/')[1])
-        console.dir(err?.code?.split('/')[1])
-        setIsLoading(false)
       });
     }
     
@@ -58,13 +54,16 @@ export default function Login() {
     }
 
   return (
-    <div className='flex items-center justify-center lg:bg-black bg-gray-50 lg:bg-opacity-80 h-screen fixed inset-0 z-50'>
-      <div className="lg:w-[30%] w-[85%] bg-white rounded-md shadow-emerald-100 lg:p-14 p-8">
-        <div className="mx-auto my-0">
-          <span className="text-5xl">
-            <FiUser />
-          </span>
+    <div className='flex items-center justify-center lg:bg-black bg-white lg:bg-opacity-80 h-screen fixed inset-0 z-50'>
+      <div className="lg:w-[30%] w-[82%] bg-white  rounded-md lg:p-14">
+        <div 
+          className="rounded-full cursor-pointer text-rose-500 fixed top-[.9rem] right-[.9rem] text-3xl"
+          onClick={() => setOpenModal(null)}
+        >
+          <FiXCircle />
         </div>
+        <h3 className="text-2xl font-semibold text-center mb-5">Login</h3>
+        {message && <div className="my-2 text-red-600">{message}</div>}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -81,21 +80,27 @@ export default function Login() {
                   />
                 </div>
               ))}
-              <button type='submit' className='w-full px-3 py-2 bg-orange text-white'>
+              <button type='submit' className='w-full px-3 py-3 rounded bg-primary text-white'>
                 {isLoading ? 'Loading...' : 'Login'}
               </button>
             </Form>
           )}
         </Formik>
         <div className="">
-          <div className="bg-red-600 hover:bg-red-800 cursor-pointer tex-xl w-full flex items-center justify-center rounded py-3 my-5"
+          <button 
+            className="
+              bg-red-500 text-white cursor-pointer 
+              tex-xl w-full flex items-center justify-center rounded py-3 my-5
+            "
             onClick={GoogleAuthHandler}
           >
-            <FaGoogle />
-          </div>
-          <div className="bg-blue-600 tex-xl w-full flex items-center justify-center rounded py-3">
-            <FaTwitter />
-          </div>
+            Sign in with Google
+            <FaGoogle className='text-xl ml-2' />
+          </button>
+          <button className="flex items-center justify-center text-white bg-blue-600 tex-xl w-full rounded py-3">
+            Sign in with Facebook
+            <FaTwitter className='text-xl ml-2' />
+          </button>
         </div>
         <div className="flex justify-center mt-6" onClick={() => setOpenModal('signup')}>
           Don't have account 
@@ -107,57 +112,17 @@ export default function Login() {
 }
 
 /*
- const FacebookAuthHandler = async () => {
-      try {
-        const userCred = await signInWithPopup(auth, new FacebookAuthProvider());
-        const user = { name:userCred.user.displayName, avatar:userCred.user.photoURL}
+const GoogleAuthHandler = async () => {
+      try{
+        const credential = await signInWithPopup(auth, new GoogleAuthProvider()).then(res => res);
+        const user = { name:credential.user.displayName, avatar:credential.user.photoURL}
         setProfile(user)
         setOpenModal(null)
-      } catch (error) {
-        console.log(error)
+      }catch(error){
+        console.dir(error)
+        setMessage(error?.code?.split('/')[1])
       }
     }
-
-
-export default function Login() {
-
-   
-  return (
-    <div className='lg:px-[35%] px-[5%] h-screen fixed inset-0 z-50 overflow-hidden bg-black bg-opacity-25 backdrop-blur-sm pt-[5rem]'>
-         <div className="w-full lg:p-6 p-6 rounded bg-white relative">
-            <div 
-                className="rounded-full cursor-pointer hover:bg-red-600 hover:text-white text-rose-500 absolute top-[.5rem] right-[.5rem] text-xl"
-                onClick={() => setOpenModal(null)}
-            >
-                <FaTimes />
-            </div>
-            <div className="my-4"> 
-                <span className="block lg:text-2xl text-xl lg:font-semibold text-center mB-2">Login</span> 
-                {message && <span className='text-red-500'>{message}</span>}
-            </div>
-           
-            <div className="mt-8">
-                <div className="flex items-center">
-                    <div className="h-1 bg-gradient-to-r from-white to-red-600 flex-1"></div>
-                    <h2 className="lg:text-2xl text-xl font-semibold mx-4">Login with</h2>
-                    <div className="h-1 bg-gradient-to-l from-white to-red-600 flex-1"></div>
-                </div>
-                <div className="flex justify-evenly text-white mt-5">
-                    
-                    <div className="bg-red-600 tex-xl h-10 w-10 flex items-center justify-center rounded-full">
-                        <FaInstagram />
-                    </div>
-                    <div className="bg-sky-500 tex-xl h-10 w-10 flex items-center justify-center rounded-full">
-                        <FaLinkedinIn />
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-  )
-}
-
 
 */
 const fields = [

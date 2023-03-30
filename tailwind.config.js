@@ -8,7 +8,7 @@ module.exports = {
       colors:{
         "dark-purple":"#081A51",
         "light-white":"#344783",
-        "bgcol":"#E85B2A",
+        "primary":"#E85B2A",
       }
     },
   },
